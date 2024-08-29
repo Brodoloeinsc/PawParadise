@@ -1,5 +1,13 @@
+<?php
+
+    if(!$_COOKIE['nome']){
+        header('Location: ../pages/login.html');
+        exit();
+    }
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +19,8 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <section class="center">
-        <section class="container central">
-            <form action="../php/login.php" method="post">
-                <label for="">Nome</label>
-                <input type="text" name="username"><br>
-                <label for="">Senha</label>
-                <input type="password" name="password"><br>
-                <input type="submit">
-            </form>
-        </section>
-    </section>
+    <h1>
+        Olá <?php echo$_COOKIE['nome'];?>
+    </h1>
 </body>
 </html>
