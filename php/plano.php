@@ -1,5 +1,5 @@
 <?php
-
+    include('../db/db.php');
     if(!$_COOKIE['nome']){
         header('Location: ../pages/login.html');
         exit();
