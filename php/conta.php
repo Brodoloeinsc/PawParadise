@@ -1,5 +1,5 @@
 <?php
-
+    include('../db/db.php');
     if(!$_COOKIE['nome']){
         header('Location: ../pages/login.html');
         exit();
@@ -19,8 +19,18 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <h1>
-        Olá <?php echo$_COOKIE['nome'];?>
-    </h1>
+    <header>
+        <nav>
+            <a href="../index.html" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
+            <a href="../php/plano.php" class="nav-item link">Seu Plano</a>
+        </nav>
+    </header>
+    <section class="all">
+        <section class="container central">
+            <h1>
+                Olá <?php echo$_COOKIE['nome'];?>
+            </h1>
+        </section>
+    </section>
 </body>
 </html>

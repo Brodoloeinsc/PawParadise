@@ -1,3 +1,11 @@
+<?php
+    include('../db/db.php');
+    if(!$_COOKIE['nome']){
+        header('Location: ../pages/login.html');
+        exit();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +22,7 @@
     <header>
         <nav>
             <a href="../index.html" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
-            <a href="../php/conta.php" class="nav-item link">Sua Conta</a>
+            <a href="./conta.php" class="nav-item link">Sua Conta</a>
         </nav>
     </header>
     

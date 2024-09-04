@@ -182,6 +182,46 @@ a.btn{
     border: 1px solid rgb(210, 81, 30);
 }
 
+/*Form*/
+
+form.login{
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.login>label{
+    color: #00BF63;
+    font-size: 2vw;
+}
+
+.login>input{
+    width: 100%;
+    height: 5vh;
+    border: #00BF63 1px solid;
+    border-radius: 15px;
+    padding: 8px;
+}
+
+.login>input:hover{
+    border: #066437 2px solid;
+}
+
+.login>input[type=submit]{
+    color: white;
+    background-color: #00BF63;
+    font-size: 1vw;
+}
+
+.login>input[type=submit]:hover{
+    background-color: #00bf639f;
+}
+
 /*footer*/
 
 footer{
