@@ -9,7 +9,7 @@
     $result = pg_query($query);
 
     if($result == true){
-        setcookie('nome', $email);
+        setcookie('email', $email);
         header("Location:./plano.php");
     }else{
         echo "Login ou senha incorretos. <br>";

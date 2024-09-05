@@ -1,6 +1,6 @@
 <?php
-    include('../db/db.php');
-    if(!$_COOKIE['nome']){
+    include("../db/db.php");
+    if(!$_COOKIE['email']){
         header('Location: ../pages/login.html');
         exit();
     }
