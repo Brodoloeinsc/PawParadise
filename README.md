@@ -28,3 +28,9 @@ Tecnologias usadas para o desenvolvimento:
 - Javascript
 - Git/Github
 - Docker
+
+Para rodar o codigo faça os seguintes passos: <br><br>
+``` Entre na pasta e de no terminal docker compose up -d ```<br><br>
+``` Entre em algum visualizador de db para acessar o banco DBeaver, DataGrip ```<br><br>
+``` Digite os seguintes codigos de criaçao de tabelas ```<br><br>
+``` CREATE TABLE "user" (id varchar(255) NOT NULL unique, name varchar(255), email varchar(255) unique, password varchar(255), plan varchar(255)); ```<br><br>
