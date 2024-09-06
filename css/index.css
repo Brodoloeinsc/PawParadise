@@ -222,6 +222,14 @@ form.login{
     background-color: #00bf639f;
 }
 
+/* Notificaçao de erro */
+
+div.erro{
+    background-color: red;
+    color: white;
+    width: 10vw;
+}
+
 /*footer*/
 
 footer{
