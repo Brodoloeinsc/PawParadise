@@ -5,6 +5,8 @@
     $email = $_POST['email'];
     $senha = $_POST['password'];
 
+    $senha = md5($senha);
+
     $query = "SELECT * FROM \"user\" WHERE email = '{$email}' AND password = '{$senha}'";
     $result = pg_query($query);
 

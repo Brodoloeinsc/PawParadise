@@ -18,9 +18,18 @@
     </header>
     <section class="center">
         <section class="container central">
+            <div class="erro">
+                <?php
+                
+                if(isset($_GET['error'])){
+                    echo$_GET['error']."!";
+                }
+                
+                ?>
+            </div>
             <form action="../php/criarconta.php" method="post" class="login">
                 <label>Nome</label> <br>
-                <input type="text" name="email"><br>
+                <input type="text" name="nome"><br>
                 <label>Email</label> <br>
                 <input type="text" name="email"><br>
                 <label>Senha</label> <br>

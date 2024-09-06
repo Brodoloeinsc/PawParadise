@@ -28,8 +28,18 @@
     <section class="all">
         <section class="container central">
             <h1>
-                Olá <?php echo$_COOKIE['nome'];?>
+                Olá <?php 
+                
+                    $query = "SELECT * FROM \"user\" WHERE email = '{$_COOKIE['email']}'";
+                    $result = pg_query($query);
+
+                    $row = pg_fetch_row($result);
+
+                    echo $row[1];
+                
+                ?>
             </h1>
+            <a href="./deslogar.php">Desconectar</a>
         </section>
     </section>
 </body>
