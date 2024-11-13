@@ -1,3 +1,11 @@
+<!-- <?php
+    include("../db/db.php");
+    if(!$_COOKIE['email']){
+        header('Location: ../pages/login.html');
+        exit();
+    }
+
+?> -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,29 +22,25 @@
     <header>
         <nav>
             <a href="../index.html" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
+            <a href="../php/plano.html" class="nav-item link">Seu Plano</a>
         </nav>
     </header>
-    <section class="center">
+    <section class="all">
         <section class="container central">
-            <div class="erro">
-                <?php
+            <h1>
+                <!-- Olá <?php 
                 
-                if(isset($_GET['error'])){
-                    echo$_GET['error']."!";
-                }
+                    $query = "SELECT * FROM \"user\" WHERE email = '{$_COOKIE['email']}'";
+                    $result = pg_query($query);
+
+                    $row = pg_fetch_row($result);
+
+                    echo $row[1];
                 
-                ?>
-            </div>
-            <form action="../php/criarconta.php" method="post" class="login">
-                <label>Nome</label> <br>
-                <input type="text" name="nome"><br>
-                <label>Email</label> <br>
-                <input type="text" name="email"><br>
-                <label>Senha</label> <br>
-                <input type="password" name="password"><br>
-                <input type="submit" value="Criar Conta">
-                <a href="./login.html">Já tenho uma conta</a>
-            </form>
+                ?> -->
+                Olá {Nome do Usuário}
+            </h1>
+            <a href="../index.html">Desconectar</a>
         </section>
     </section>
 </body>
