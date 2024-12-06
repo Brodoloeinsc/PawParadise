@@ -11,16 +11,28 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div class="center">
-        <section class="container central">
+    <div class="container">
+        <section class="container left">
             <img src="./images/logo.jpg" alt="Logo da Paw Paradise">
-            <h1>Seja bem-vindo,</h1>
-            <h2>O que voce deseja fazer?</h2>
+            <div class="text">
+                <h1>Seja bem-vindo,</h1>
+                <h2>O que voce deseja fazer?</h2>
+            </div>
             <div class="buttons">
-                <a href="" class='btn'>Compras Livres</a>
-                <a href="./php/plano.php" class='btn'>Acessar/Assinar o plano</a>
+                <a href="./pages/compras.php" class='btn'>Compras Livres</a>
             </div>
         </section>
+        <section class="container right">
+            <form  method="post" class="login" action="./php/login.php">
+                <label>Email</label> <br>
+                <input type="text" name="email"><br>
+                <label>Senha</label> <br>
+                <input type="password" name="password"><br>
+                <input type="submit" class="submit" value="Enviar" onclick="redirecionar()">
+                <a href="./pages/criar.php">Não tenho uma conta</a>
+            </form>
+        </section>
     </div>
+
 </body>
 </html>

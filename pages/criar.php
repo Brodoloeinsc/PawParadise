@@ -34,8 +34,8 @@
                 <input type="text" name="email"><br>
                 <label>Senha</label> <br>
                 <input type="password" name="password"><br>
-                <input type="submit" value="Criar Conta">
-                <a href="./login.html">Já tenho uma conta</a>
+                <input class="submit" type="submit" value="Criar Conta">
+                <a href="../index.html">Já tenho uma conta</a>
             </form>
         </section>
     </section>

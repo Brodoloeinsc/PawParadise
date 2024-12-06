@@ -79,14 +79,41 @@ nav{
 
 /*Container Central*/
 
+.container{
+    display: flex;
+}
+
 .container.central{
     width: 74%;
     text-align: center;
     margin: 0 auto;
+    flex-wrap: wrap!important;
+    justify-content: center;
+}
+
+.container.left{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border-right: 1px solid #066437;
+}
+
+.container.right{
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .container>img{
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -103,8 +130,9 @@ nav{
 }
 
 .container>.buttons{
-    width: 100%;
+    width: 80%;
     text-align: center;
+    margin: 0 auto;
 }
 
 a.btn{
@@ -114,8 +142,13 @@ a.btn{
     display: inline-block;
     background-color: #00BF63;
     text-decoration: none;
-    padding: 1.3vw;
+    padding: 0.8vw;
     font-size: 1.3vw;
+    width: 100%;
+}
+
+.btn:hover{
+    background-color: #009e52;
 }
 
 /*Container lateral*/
@@ -158,6 +191,17 @@ a.btn{
     height: 15vh;
 }
 
+.card.compras{
+    width: 30%!important;
+    height: auto!important;
+    margin-top: 5px;
+    margin-bottom:55px;
+}
+
+.compras img{
+    width: 100%;
+}
+
 .preco.seu{
     color: #00BF63;
 }
@@ -168,16 +212,16 @@ a.btn{
     color: rgb(210, 81, 30);
 }
 
-.card button{
+.card .button{
+    text-decoration: none;
     background-color: #00BF63;
     color: white;
-    width: 5vw;
-    height: 3vh;
+    padding: 5px 15px;
     border: none;
     border-radius: 5px;
 }
 
-.card button:hover{
+.card .button:hover{
     background-color: #00bf637e;
     border: 1px solid rgb(210, 81, 30);
 }
@@ -212,13 +256,16 @@ form.login{
     border: #066437 2px solid;
 }
 
-.login>input[type=submit]{
+.login>.submit{
+    text-align: center;
     color: white;
     background-color: #00BF63;
     font-size: 1vw;
+    cursor: pointer;
 }
 
-.login>input[type=submit]:hover{
+.login>.submit:hover{
+    border: none;
     background-color: #00bf639f;
 }
 
@@ -228,6 +275,74 @@ div.erro{
     background-color: red;
     color: white;
     width: 10vw;
+}
+
+/* Carrinho */
+
+header{
+    width: 100%;
+}
+
+nav.nav-search{
+    background-color: #00BF63;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 13vh;
+}
+
+.carrinho{
+    font-size: 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    cursor: pointer;
+}
+
+.cart-itens{
+    width: 100%;
+}
+
+.cart-itens>article{
+    padding: 15px;
+    margin: 5px;
+    border: 1px solid #00BF63;
+    width: 80%;
+    margin: 7px auto;
+    border-radius: 10px;
+}
+
+.cart-itens .nome{
+    width: 50%;
+    text-align: left;
+}
+
+.cart-itens .preco{
+    width: 50%;
+    text-align: right;
+}
+
+.cart-itens>article:hover{
+    background-color: rgba(128, 128, 128, 0.301);
+}
+
+.end{
+    width: 100%;
+}
+
+.end button{
+    width: 80%;
+    height: 5.3vh;
+    background-color: #00BF63;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 25px;
+    border: 0;
+}
+
+.end button:hover{
+    background-color: #066437;
 }
 
 /*footer*/

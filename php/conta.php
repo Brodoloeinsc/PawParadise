@@ -1,7 +1,7 @@
 <?php
     include("../db/db.php");
     if(!$_COOKIE['email']){
-        header('Location: ../pages/login.html');
+        header('Location: ../index.html');
         exit();
     }
 
