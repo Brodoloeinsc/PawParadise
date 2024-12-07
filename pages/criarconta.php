@@ -19,7 +19,7 @@ session_start();
 
     if($result == true){
         setcookie("email", $email, time() + 3600, "/"); // 1 hora
-        header("Location:./plano.php");
+        header("Location:./pagamento.php");
     }
 
 ?>

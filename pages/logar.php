@@ -18,9 +18,9 @@ session_start();
 
     if(pg_num_rows($result) > 0){
         setcookie("email", $email, time() + 3600, "/"); // 1 hora
-        header("Location:./plano.php");
+        header("Location:./pagamento.php");
     }else{
-        header("Location:../index.php?error=1{$row}");
+        header("Location:./login.php?error=1{$row}");
     }
 
 ?>

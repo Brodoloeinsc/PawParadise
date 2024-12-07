@@ -17,7 +17,7 @@
                 
                 ?>
             </div>
-            <form action="../php/criarconta.php" method="post" class="login">
+            <form action="./criarconta.php" method="post" class="login">
                 <label>Nome</label> <br>
                 <input type="text" name="nome"><br>
                 <label>Email</label> <br>
@@ -25,7 +25,7 @@
                 <label>Senha</label> <br>
                 <input type="password" name="password"><br>
                 <input class="submit" type="submit" value="Criar Conta">
-                <a href="../index.php">Já tenho uma conta</a>
+                <a href="./login.php">Já tenho uma conta</a>
             </form>
         </section>
     </section>
