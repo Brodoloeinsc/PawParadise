@@ -10,7 +10,7 @@
     <header>
         <nav class="nav-search">
             <div class="carrinho" onclick="redirect()"><i class="fa-solid fa-backward"></i></div>
-            <a href="../index.html" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
+            <a href="../index.php" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
         </nav>
     </header>
     

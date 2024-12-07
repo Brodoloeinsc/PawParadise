@@ -3,7 +3,7 @@
 ?>
     <header>
         <nav>
-            <a href="../index.html" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
+            <a href="../index.php" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
         </nav>
     </header>
     <section class="center">

@@ -305,92 +305,115 @@ div.erro{
 
 /* Carrinho */
 
-header{
-    width: 100%;
+/* Estilos do Header */
+.nav-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #00BF63;
 }
 
-nav.nav-search{
-    background-color: #00BF63;
-    width: 100%;
+.carrinho {
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    height: 13vh;
 }
 
-.carrinho{
-    font-size: 60px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    cursor: pointer;
+.carrinho i {
+    margin-right: 5px;
 }
 
-.cart-itens{
-    width: 100%;
+/* Setinha para voltar */
+.carrinho:hover {
+    color: #ffffff86;
 }
 
-.cart-itens>article {
-    position: relative; /* Define a posição do article como relativa para os elementos internos */
-    padding: 15px;
-    margin: 5px;
-    border: 1px solid #00BF63;
+/* Logo */
+.nav-item img {
+    height: 40px;
+}
+
+/* Estilo da seção do carrinho */
+.cart-itens {
     width: 80%;
-    margin: 7px auto;
+    margin: 20px auto;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #00BF63;
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 10px;
 }
 
-.cart-itens .nome{
-    width: 50%;
-    text-align: left;
+.line .nome {
+    font-size: 1.2rem;
 }
 
-.cart-itens .preco{
-    width: 50%;
-    text-align: right;
+.line .preco {
+    font-size: 1.2rem;
+    color: #00BF63;
 }
 
-.cart-itens>article:hover{
-    background-color: rgba(128, 128, 128, 0.301);
+.line .qtd {
+    display: flex;
+    align-items: center;
 }
 
-.end{
-    width: 100%;
+.line .qtd a {
+    font-size: 1.5rem;
+    color: #00BF63;
+    margin: 0 10px;
 }
 
-.end button{
-    width: 80%;
-    height: 5.3vh;
-    background-color: #00BF63;
+.line .delete-btn {
+    text-align: center;
+}
+
+.line .delete-btn button {
+    background-color: #FF4D4D;
     color: white;
-    font-size: 1.4rem;
-    border-radius: 25px;
-    border: 0;
-}
-
-.end button:hover{
-    background-color: #066437;
-}
-
-.cart-itens .delete-btn {
-    position: absolute;
-    right: 10px; /* Ajuste a distância da borda direita */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.cart-itens .delete-btn button {
-    background-color: #FF3B30; /* Cor vermelha para exclusão */
-    color: white;
-    padding: 8px 15px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.cart-itens .delete-btn button:hover {
-    background-color: #FF1C0C;
+.line .delete-btn button:hover {
+    background-color: #FF0000;
 }
+
+.end {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.end a {
+    background-color: #00BF63;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.end a:hover {
+    background-color: #066437;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+}
+
 
 /* Product Page */
 
@@ -447,6 +470,104 @@ nav.nav-search{
 
 .qtd span{
     margin: 0 10px;
+}
+
+/* Ajustando a Centralização para a Página de Pagamento */
+.container.pagamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px; /* Adicionando um tamanho máximo para o formulário */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    height: 100vh; /* Garantir que ocupe toda a altura da tela */
+}
+
+.container.pagamento form {
+    width: 100%;
+    max-width: 500px; /* Limita o tamanho do formulário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.container.pagamento h1 {
+    font-size: 2.5vw;
+    color: #000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container.pagamento label {
+    font-size: 1.2vw;
+    color: #000;
+}
+
+.container.pagamento input[type="text"],
+.container.pagamento input[type="month"],
+.container.pagamento input[type="number"] {
+    padding: 10px;
+    font-size: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.container.pagamento input[type="submit"] {
+    background-color: #00BF63;
+    color: white;
+    font-size: 1.3vw;
+    padding: 1vw;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container.pagamento input[type="submit"]:hover {
+    background-color: #009e52;
+}
+
+/* Página de Sucesso */
+.container.sucesso {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container.sucesso h1 {
+    font-size: 2.5vw;
+    color: #00BF63;
+    margin-bottom: 20px;
+}
+
+.container.sucesso p {
+    font-size: 1.5vw;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.container.sucesso .buttons a {
+    background-color: #00BF63;
+    color: white;
+    padding: 1vw 2vw;
+    border-radius: 10px;
+    font-size: 1.5vw;
+    text-decoration: none;
+}
+
+.container.sucesso .buttons a:hover {
+    background-color: #009e52;
 }
 
 /*footer*/
