@@ -14,12 +14,12 @@ if (isset($_GET["error"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawParadise - Login</title>
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <div class="container">
         <section class="container left">
-            <img src="./images/logo.jpg" alt="Logo da Paw Paradise">
+            <img src="../images/logo.jpg" alt="Logo da Paw Paradise">
             <div class="text">
                 <h1>Bem-vindo de volta!</h1>
                 <h2>Entre para acessar o pagamento</h2>
@@ -27,7 +27,7 @@ if (isset($_GET["error"])) {
         </section>
         
         <section class="container right">
-            <form method="post" class="login" action="processar_login.php">
+            <form method="post" class="login" action="logar.php">
                 <label>Email</label><br>
                 <input type="text" name="email" required><br>
 
@@ -35,7 +35,7 @@ if (isset($_GET["error"])) {
                 <input type="password" name="password" required><br>
 
                 <input type="submit" class="submit" value="Entrar">
-                <a href="./criarconta.php">Não tem uma conta? Crie aqui.</a>
+                <a href="./criarppagar.php">Não tem uma conta? Crie aqui.</a>
             </form>
         </section>
     </div>

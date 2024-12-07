@@ -1,3 +1,32 @@
+:root {
+    /* Cores */
+    --cor-primaria: #00BF63;
+    --cor-primaria-hover: #009e52;
+    --cor-secundaria: #066437;
+    --cor-terciaria: rgb(210, 81, 30);
+    --cor-branca: white;
+    --cor-preta: black;
+    --cor-vermelha: #FF4D4D;
+    --cor-vermelha-hover: #FF0000;
+    --cor-cinza-claro: #f1f1f1;
+    --cor-cinza-escuro: #333;
+
+    /* Tamanhos */
+    --font-size-pequeno: 1vw;
+    --font-size-medio: 1.5vw;
+    --font-size-grande: 2.5vw;
+
+    /* Espaçamentos */
+    --padding-pequeno: 5px;
+    --padding-medio: 10px;
+    --padding-grande: 20px;
+
+    /* Outros */
+    --borda-radius: 10px;
+    --altura-nav: 13vh;
+    --altura-footer: 5vh;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -406,14 +435,6 @@ div.erro{
 .end a:hover {
     background-color: #066437;
 }
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
-    margin-top: 20px;
-}
-
 
 /* Product Page */
 
