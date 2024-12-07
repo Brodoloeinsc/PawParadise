@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     include("../db/db.php");
 
     $id = uniqid();
@@ -18,7 +18,7 @@
     $result = pg_query($query);
 
     if($result == true){
-        setcookie('email', $email);
+        setcookie("email", $email, time() + 3600, "/"); // 1 hora
         header("Location:./plano.php");
     }
 

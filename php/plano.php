@@ -1,7 +1,8 @@
 <?php
+    session_start();
     include("../db/db.php");
     if(!$_COOKIE['email']){
-        header('Location: ../pages/login.html');
+        header('Location: ../index.php');
         exit();
     }
 
@@ -21,7 +22,7 @@
 <body>
     <header>
         <nav>
-            <a href="../index.html" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
+            <a href="../index.php" class="nav-item"><img src="../images/logo.png" alt="Logo da PawParadise" class="nav-item img"></a>
             <a href="./conta.php" class="nav-item link">Sua Conta</a>
         </nav>
     </header>

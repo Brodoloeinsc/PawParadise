@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+
+    if(isset($_COOKIE['email'])){
+        header("Location:./plano.php");
+    }
+
     include("../db/db.php");
 
     $email = $_POST['email'];
@@ -10,12 +16,11 @@
     $query = "SELECT * FROM \"user\" WHERE email = '{$email}' AND password = '{$senha}'";
     $result = pg_query($query);
 
-    if($result == true){
-        setcookie('email', $email);
+    if(pg_num_rows($result) > 0){
+        setcookie("email", $email, time() + 3600, "/"); // 1 hora
         header("Location:./plano.php");
     }else{
-        echo "Login ou senha incorretos. <br>";
-        echo "<a href=\"../pages/login.html\">Volte para o login</a>";
+        header("Location:../index.php?error=1{$row}");
     }
 
 ?>

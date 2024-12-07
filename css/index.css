@@ -269,6 +269,32 @@ form.login{
     background-color: #00bf639f;
 }
 
+.center-button {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;            
+    width: 100%;              
+}
+
+.submit {
+    background-color: #00BF63;
+    color: white;
+    font-size: 1.3vw;
+    padding: 1vw;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+}
+
+.submit:hover {
+    background-color: #009e52;
+}
+
+
+
 /* Notificaçao de erro */
 
 div.erro{
