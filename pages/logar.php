@@ -3,7 +3,7 @@
     session_start();
 
     if (isset($_COOKIE['email'])) {
-        header("Location: ./plano.php");
+        header("Location: ./pagamento.php");
         exit();
     }
 
