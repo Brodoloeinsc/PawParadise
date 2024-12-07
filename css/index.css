@@ -304,7 +304,8 @@ nav.nav-search{
     width: 100%;
 }
 
-.cart-itens>article{
+.cart-itens>article {
+    position: relative; /* Define a posição do article como relativa para os elementos internos */
     padding: 15px;
     margin: 5px;
     border: 1px solid #00BF63;
@@ -343,6 +344,83 @@ nav.nav-search{
 
 .end button:hover{
     background-color: #066437;
+}
+
+.cart-itens .delete-btn {
+    position: absolute;
+    right: 10px; /* Ajuste a distância da borda direita */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cart-itens .delete-btn button {
+    background-color: #FF3B30; /* Cor vermelha para exclusão */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-itens .delete-btn button:hover {
+    background-color: #FF1C0C;
+}
+
+/* Product Page */
+
+.image-left{
+    width: 100%;
+}
+
+.product{
+    display: flex;
+    width: 100%;
+}
+
+.product .right{
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.product .button{
+    text-decoration: none;
+    background-color: #00BF63;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.product .button:hover{
+    background-color: #00bf637e;
+    border: 1px solid rgb(210, 81, 30);
+}
+
+.product h3, p{
+    width: 100%;
+}
+
+.itens{
+    width: 100%;
+    height: auto;
+}
+
+.qtd{
+    padding: 10px 0;
+}
+
+.qtd a{
+    padding: 10px 10px 4px 10px;
+    color: #000;
+    border: 1px solid black;
+}
+
+.qtd span{
+    margin: 0 10px;
 }
 
 /*footer*/
