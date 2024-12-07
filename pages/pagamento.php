@@ -1,16 +1,16 @@
 <?php
-include('../db/db.php');
-session_start();
+    include('../db/db.php');
+    session_start();
 
-// Verifica se o usuário está logado (caso contrário, redireciona para o login)
-if (!isset($_COOKIE['email'])) {
-    header("Location: login.php");
-    exit();
-}
+    // Verifica se o usuário está logado (caso contrário, redireciona para o login)
+    if (!isset($_COOKIE['email'])) {
+        header("Location: login.php");
+        exit();
+    }
 
-// Inicializa o carrinho e o total
-$products = isset($_COOKIE["products"]) ? explode(",", $_COOKIE["products"]) : [];
-$total = 0; // Variável para armazenar o total do carrinho
+    // Inicializa o carrinho e o total
+    $products = isset($_COOKIE["products"]) ? explode(",", $_COOKIE["products"]) : [];
+    $total = 0; // Variável para armazenar o total do carrinho
 ?>
 
 <?php include('./header.php') ?>

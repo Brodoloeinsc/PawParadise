@@ -1,17 +1,17 @@
 <?php
-session_start();
+    session_start();
 
-// Evitar cache do navegador para garantir que o estado seja verificado corretamente
-header("Cache-Control: no-cache, no-store, must-revalidate"); 
-header("Pragma: no-cache");
-header("Expires: 0");
+    // Evitar cache do navegador para garantir que o estado seja verificado corretamente
+    header("Cache-Control: no-cache, no-store, must-revalidate"); 
+    header("Pragma: no-cache");
+    header("Expires: 0");
 
-// Verificar se o cookie 'email' está presente
-$email = isset($_COOKIE['email']) ? $_COOKIE['email'] : null;
+    // Verificar se o cookie 'email' está presente
+    $email = isset($_COOKIE['email']) ? $_COOKIE['email'] : null;
 
-if (isset($_GET["error"])) {
-    echo "<script>alert('Usuário ou Senha Incorreto');</script>";
-}
+    if (isset($_GET["error"])) {
+        echo "<script>alert('Usuário ou Senha Incorreto');</script>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,26 +40,35 @@ if (isset($_GET["error"])) {
         </section>
 
         <?php
-        // Verificar se o cookie 'email' existe
-        if (empty($email)) {
-            // Se o cookie 'email' não estiver presente, mostrar o formulário de login
-            echo "<section class=\"container right\">
-                <form method=\"post\" class=\"login\" action=\"./php/login.php\">
-                    <label>Email</label><br>
-                    <input type=\"text\" name=\"email\"><br>
-                    <label>Senha</label><br>
-                    <input type=\"password\" name=\"password\"><br>
-                    <input type=\"submit\" class=\"submit\" value=\"Entrar\">
-                    <a href=\"./pages/criar.php\">Não tem uma conta? Crie aqui.</a>
-                </form>
-            </section>";
-        } else {
-            // Se o cookie 'email' estiver presente, exibir o botão "Ir para o plano"
-            echo "<section class=\"center-button\">
-                <a class=\"submit\" href=\"./php/plano.php\">Ir para o plano</a>
-            </section>";
-        }
+            // Função para renderizar a seção de login
+            function renderLoginForm() {
+                echo "<section class=\"container right\">
+                        <form method=\"post\" class=\"login\" action=\"./php/login.php\">
+                            <label>Email</label><br>
+                            <input type=\"text\" name=\"email\"><br>
+                            <label>Senha</label><br>
+                            <input type=\"password\" name=\"password\"><br>
+                            <input type=\"submit\" class=\"submit\" value=\"Entrar\">
+                            <a href=\"./pages/criar.php\">Não tem uma conta? Crie aqui.</a>
+                        </form>
+                    </section>";
+            }
+
+            // Função para renderizar a seção de plano
+            function renderPlanButton() {
+                echo "<section class=\"center-button\">
+                        <a class=\"submit\" href=\"./php/plano.php\">Ir para o plano</a>
+                    </section>";
+            }
+
+            // Verificar a existência do cookie 'email' e renderizar a seção adequada
+            if (empty($email)) {
+                renderLoginForm();
+            } else {
+                renderPlanButton();
+            }
         ?>
+        
     </div>
 </body>
 </html>

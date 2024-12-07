@@ -1,14 +1,12 @@
 <?php
-session_start();
+    session_start();
+    include('../classes/deslogar.php');
 
-// Remover o cookie "email"
-setcookie('email', '', time() - 3600, '/'); // Expirando o cookie
+    // Realiza o logout
+    Deslogar::logoutCookie('email');
+    Deslogar::logoutSession();
 
-// Destruir a sessão
-session_unset();
-session_destroy();
+    // Redireciona para a página de conta após o logout
+    Deslogar::redirectTo('./conta.php');
 
-// Redirecionar para a página inicial após o logout
-header("Location: ./conta.php");
-exit();
 ?>
