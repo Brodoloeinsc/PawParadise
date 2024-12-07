@@ -1,6 +1,6 @@
 :root {
     /* Cores */
-    --cor-primaria: #00BF63;
+    --cor-primaria: #2c6b3f;
     --cor-primaria-hover: #009e52;
     --cor-secundaria: #066437;
     --cor-terciaria: rgb(210, 81, 30);
@@ -59,7 +59,7 @@ body, html{
 /*Header*/
 
 nav{
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -169,7 +169,7 @@ a.btn{
     color: white;
     border-radius: 10px;
     display: inline-block;
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     text-decoration: none;
     padding: 0.8vw;
     font-size: 1.3vw;
@@ -187,7 +187,7 @@ a.btn{
 }
 
 .container.lateral.left{
-    border-right: 1px solid #00BF63;
+    border-right: 1px solid var(--cor-primaria);
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -195,7 +195,7 @@ a.btn{
 }
 
 .container.lateral.right{
-    border-left: 1px solid #00BF63;
+    border-left: 1px solid var(--cor-primaria);
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -203,7 +203,7 @@ a.btn{
 }
 
 .container.lateral h1{
-    color: #00BF63;
+    color: var(--cor-primaria);
 }
 
 /*articles*/
@@ -214,9 +214,9 @@ a.btn{
     width: 90%;
     text-align: center;
     padding: 12px;
-    border: 1px solid #00BF63;
+    border: 1px solid var(--cor-primaria);
     border-radius: 10px;
-    color: #00BF63;
+    color: var(--cor-primaria);
     height: 15vh;
 }
 
@@ -232,7 +232,7 @@ a.btn{
 }
 
 .preco.seu{
-    color: #00BF63;
+    color: var(--cor-primaria);
 }
 
 .preco{
@@ -243,7 +243,7 @@ a.btn{
 
 .card .button{
     text-decoration: none;
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     color: white;
     padding: 5px 15px;
     border: none;
@@ -269,14 +269,14 @@ form.login{
 }
 
 .login>label{
-    color: #00BF63;
+    color: var(--cor-primaria);
     font-size: 2vw;
 }
 
 .login>input{
     width: 100%;
     height: 5vh;
-    border: #00BF63 1px solid;
+    border: var(--cor-primaria) 1px solid;
     border-radius: 15px;
     padding: 8px;
 }
@@ -288,7 +288,7 @@ form.login{
 .login>.submit{
     text-align: center;
     color: white;
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     font-size: 1vw;
     cursor: pointer;
 }
@@ -307,7 +307,7 @@ form.login{
 }
 
 .submit {
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     color: white;
     font-size: 1.3vw;
     padding: 1vw;
@@ -340,7 +340,7 @@ div.erro{
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
 }
 
 .carrinho {
@@ -375,7 +375,7 @@ div.erro{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #00BF63;
+    border: 1px solid var(--cor-primaria);
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
@@ -387,7 +387,7 @@ div.erro{
 
 .line .preco {
     font-size: 1.2rem;
-    color: #00BF63;
+    color: var(--cor-primaria);
 }
 
 .line .qtd {
@@ -397,7 +397,7 @@ div.erro{
 
 .line .qtd a {
     font-size: 1.5rem;
-    color: #00BF63;
+    color: var(--cor-primaria);
     margin: 0 10px;
 }
 
@@ -424,7 +424,7 @@ div.erro{
 }
 
 .end a {
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     color: white;
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -457,7 +457,7 @@ div.erro{
 
 .product .button{
     text-decoration: none;
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     color: white;
     padding: 5px 15px;
     border: none;
@@ -542,7 +542,7 @@ div.erro{
 }
 
 .container.pagamento input[type="submit"] {
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     color: white;
     font-size: 1.3vw;
     padding: 1vw;
@@ -568,7 +568,7 @@ div.erro{
 
 .container.sucesso h1 {
     font-size: 2.5vw;
-    color: #00BF63;
+    color: var(--cor-primaria);
     margin-bottom: 20px;
 }
 
@@ -579,7 +579,7 @@ div.erro{
 }
 
 .container.sucesso .buttons a {
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     color: white;
     padding: 1vw 2vw;
     border-radius: 10px;
@@ -594,7 +594,7 @@ div.erro{
 /*footer*/
 
 footer{
-    background-color: #00BF63;
+    background-color: var(--cor-primaria);
     display: flex;
     align-items: center;
     justify-content: center;

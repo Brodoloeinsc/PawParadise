@@ -134,8 +134,8 @@
                 <label for="complemento">Complemento:</label>
                 <input type="text" id="complemento" name="complemento" value="<?php echo $row['complemento']; ?>">
 
-                <label for="celphone">Celular:</label>
-                <input type="text" id="celphone" name="celphone" value="<?php echo $row['cellphone']; ?>">
+                <label for="cellphone">Celular:</label>
+                <input type="text" id="cellphone" name="cellphone" value="<?php echo $row['cellphone']; ?>">
 
                 <button type="submit" class="btn">Atualizar Dados</button>
             </form>
