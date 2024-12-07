@@ -1,12 +1,12 @@
 <?php
-    session_start();
-    include("../db/db.php");
-    if(!$_COOKIE['email']){
-        header('Location: ../index.php');
-        exit();
-    }
-
+session_start();
+include("../db/db.php");
+if(!$_COOKIE['email']){
+    header('Location: ../index.php');
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,77 +28,66 @@
     </header>
     
     <?php
-    
+        // Recupera o plano atual do usuário
         $query = "SELECT * FROM \"user\" WHERE email = '{$_COOKIE['email']}'";
         $result = pg_query($query);
-
         $row = pg_fetch_row($result);
-
         $seuplano = $row[4];
-
     ?>
 
     <section class="all">
         <section class="container lateral left">
-        <h1>Produtos para comprar</h1>
+            <h1>Produtos para comprar</h1>
             <article class="card planos">
                 <h3>Plano Basico</h3>
                 <p class="preco seu">R$40,00</p>
                 <?php
-                
                     if($seuplano == 1){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=1\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 1
                     }
-                
                 ?>
             </article>
             <article class="card planos">
                 <h3>Plano Regular</h3>
                 <p class="preco">R$60,00</p>
                 <?php
-                
                     if($seuplano == 2){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=2\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 2
                     }
-                
                 ?>
             </article>
             <article class="card planos">
                 <h3>Plano Premium</h3>
                 <p class="preco">R$89,99</p>
                 <?php
-                
                     if($seuplano == 3){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=3\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 3
                     }
-                
                 ?>
             </article>
             <article class="card planos">
                 <h3>Plano Ultra</h3>
                 <p class="preco">R$129,99</p>
                 <?php
-                
                     if($seuplano == 4){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=4\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 4
                     }
-                
                 ?>
             </article>
         </section>
+
         <section class="container central">
             <h1>Seu Plano</h1>
             <section class="informacao">
-                <span>Seu plano hoje e <?php
-
+                <span>Seu plano hoje é <?php
                     switch ($row[4]){
                         case "0":
                             echo "sem";
@@ -116,66 +105,59 @@
                             echo "o ultra de";
                             break;
                     }
-                
                 ?> assinatura</span>
             </section>
         </section>
+
         <section class="container lateral right">
             <h1>Produtos para comprar</h1>
             <article class="card planos">
                 <h3>Plano Basico</h3>
                 <p class="preco seu">R$40,00</p>
                 <?php
-                
                     if($seuplano == 1){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=1\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 1
                     }
-                
                 ?>
             </article>
             <article class="card planos">
                 <h3>Plano Regular</h3>
                 <p class="preco">R$60,00</p>
                 <?php
-                
                     if($seuplano == 2){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=2\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 2
                     }
-                
                 ?>
             </article>
             <article class="card planos">
                 <h3>Plano Premium</h3>
                 <p class="preco">R$89,99</p>
                 <?php
-                
                     if($seuplano == 3){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=3\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 3
                     }
-                
                 ?>
             </article>
             <article class="card planos">
                 <h3>Plano Ultra</h3>
                 <p class="preco">R$129,99</p>
                 <?php
-                
                     if($seuplano == 4){
                         echo "<p>(O Seu)</p>";
-                    }else{
-                        echo "<button>Upgrade</button>";
+                    } else {
+                        echo "<a href=\"upgrade.php?plano=4\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 4
                     }
-                
                 ?>
             </article>
         </section>
     </section>
+
     <footer>
         <span>&copy 2024</span>
     </footer>
