@@ -65,6 +65,7 @@ Para rodar o código, siga os passos abaixo:
         address varchar(255) NOT NULL,                  -- Endereço do usuário
         complemento varchar(255),                       -- Complemento do endereço
         cellphone varchar(15),                          -- Número de celular (aceita DDD e número)
+        admin boolean                                   -- Verificador de admin
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data de criação do usuário
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Data de atualização do usuário
     );
