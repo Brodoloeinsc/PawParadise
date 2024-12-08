@@ -94,7 +94,21 @@ Para rodar o código, siga os passos abaixo:
         FOREIGN KEY (product_id) REFERENCES "products"(id) ON DELETE CASCADE -- Relacionamento com a tabela de produtos
     );
 
+    INSERT INTO "user" (name, email, password, plan, cep, address, complemento, cellphone, admin) 
+    VALUES
+    ('Carlos Medina', 'carlos@exemplo.com', MD5('senha123'), 'Premium', '12345-678', 'Rua Exemplo, 123', 'Apto 101', '(11) 91234-5678', true),
+    ('Nilton Souza', 'nilton@exemplo.com', MD5('senha123'), 'Básico', '12345-678', 'Rua Principal, 456', 'Casa 2', '(35) 99876-5432', false),
+    ('Ana Costa', 'ana@exemplo.com', MD5('senha123'), 'Regular', '23456-789', 'Avenida Central, 789', 'Bloco B', '(21) 98765-4321', false),
+    ('Roberta Lima', 'roberta@exemplo.com', MD5('senha123'), 'Ultra', '34567-890', 'Rua das Flores, 101', '', '(31) 92345-6789', false),
+    ('João Silva', 'joao@exemplo.com', MD5('senha123'), 'Premium', '45678-901', 'Rua Nova, 202', 'Apto 302', '(61) 93456-7890', false);
+
 ```
+
+## Para acessar o site como admin
+
+Login:
+- carlos@exemplo.com
+- senha123
 
 ## Contribuindo para o Projeto
 
