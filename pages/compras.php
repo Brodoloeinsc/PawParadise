@@ -32,7 +32,7 @@ include("../db/db.php");
                 if($rows > 0) {
                     while($row = pg_fetch_assoc($result)){
                         echo "<article class=\"card compras\">";
-                        echo "<img src=\"https://http2.mlstatic.com/D_NQ_NP_762012-MLB49226621643_022022-O.webp\">";
+                        echo "<img src=\"{$row["image_url"]}\">";
                         echo "<h3>{$row["product_name"]}</h3>";
                         echo "<p class=\"preco\">R\${$row["product_price"]}</p>";
                         echo "<a class=\"button\" href=\"./produto.php?id={$row["id"]}\">Comprar</a>";

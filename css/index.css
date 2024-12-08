@@ -438,59 +438,88 @@ div.erro{
 
 /* Product Page */
 
-.image-left{
-    width: 100%;
-}
-
-.product{
+.product {
     display: flex;
-    width: 100%;
-}
-
-.product .right{
-    width: 55%;
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: nowrap;
 }
 
-.product .button{
-    text-decoration: none;
-    background-color: var(--cor-primaria);
-    color: white;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.product .button:hover{
-    background-color: #00bf637e;
-    border: 1px solid rgb(210, 81, 30);
-}
-
-.product h3, p{
-    width: 100%;
-}
-
-.itens{
+.left-image img {
+    max-width: 350px;
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.qtd{
-    padding: 10px 0;
+.product .right {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
 }
 
-.qtd a{
-    padding: 10px 10px 4px 10px;
-    color: #000;
-    border: 1px solid black;
+.product .right h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.qtd span{
+.preco {
+    font-size: 20px;
+    color: #d9534f;
+    margin-bottom: 15px;
+}
+
+.product .button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.product .button:hover {
+    background-color: #218838;
+}
+
+.product .qtd {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.product .qtd a {
+    font-size: 20px;
+    color: #007bff;
+    text-decoration: none;
     margin: 0 10px;
+}
+
+.product .qtd span {
+    font-size: 18px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-image img {
+        max-width: 100%;
+    }
+
+    .right {
+        width: 100%;
+        padding: 15px;
+    }
 }
 
 /* Ajustando a Centralização para a Página de Pagamento */

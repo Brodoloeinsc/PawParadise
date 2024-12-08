@@ -117,6 +117,13 @@
             <div>
                 <h1>Olá, <?php echo $row['name']; ?>!</h1>
                 <a href="./deslogar.php" class="deslogar">Desconectar</a>
+                <?php
+                
+                    if($row['admin'] == true){
+                        echo "<a href=\"../admin/index.php\" class=\"deslogar\">Admin Panel</a>";
+                    }
+
+                ?>
             </div>
             <form action="atualizar_dados.php" method="POST">
                 <label for="email">Email:</label>
