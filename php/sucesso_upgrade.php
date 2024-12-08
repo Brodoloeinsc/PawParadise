@@ -11,14 +11,14 @@ if (!isset($_COOKIE['email'])) {
 $query = "SELECT * FROM \"user\" WHERE email = '{$_COOKIE["email"]}'";
 $result = pg_query($query);
 
-// Definição dos planos e preços
-$planos = [
-    0 => ['nome' => 'Sem Plano', 'preco' => 'R$0,00'],
-    1 => ['nome' => 'Plano Básico', 'preco' => 'R$40,00'],
-    2 => ['nome' => 'Plano Regular', 'preco' => 'R$60,00'],
-    3 => ['nome' => 'Plano Premium', 'preco' => 'R$89,99'],
-    4 => ['nome' => 'Plano Ultra', 'preco' => 'R$129,99']
-];
+$plans_file = '../js/plans.json';
+if (!file_exists($plans_file)) {
+    die("Arquivo de planos não encontrado.");
+}
+$plans = json_decode(file_get_contents($plans_file), true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    die("Erro ao decodificar o arquivo JSON.");
+}
 
 // Verifica se o plano selecionado foi passado via POST
 $plano_selecionado = pg_fetch_row($result)[4];
@@ -91,7 +91,7 @@ $plano_selecionado = pg_fetch_row($result)[4];
 <body>
     <section class="container">
         <h1>Upgrade de Plano Realizado com Sucesso!</h1><br>
-        <p>Parabéns! Agora você está no plano <strong><?php echo $planos[$plano_selecionado]['nome']; ?></strong>.</p><br>
+        <p>Parabéns! Agora você está no plano <strong><?php echo $plans[$plano_selecionado-1]["name"]; ?></strong>.</p><br>
         <a href="plano.php" class="btn">Voltar para a sua conta</a>
     </section>
 </body>

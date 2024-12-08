@@ -255,6 +255,19 @@ a.btn{
     border: 1px solid rgb(210, 81, 30);
 }
 
+.card.planos p{
+    margin-bottom: 0;
+}
+
+.card.planos a button{
+    color: white;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    text-decoration: none;
+    padding: 0.1vw;
+}
+
 /*Form*/
 
 form.login{
@@ -505,23 +518,6 @@ div.erro{
     font-size: 18px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .product {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left-image img {
-        max-width: 100%;
-    }
-
-    .right {
-        width: 100%;
-        padding: 15px;
-    }
-}
-
 /* Ajustando a Centralização para a Página de Pagamento */
 .container.pagamento {
     display: flex;
@@ -632,4 +628,519 @@ footer{
     position: fixed;
     bottom: 0%;
     color: white;
+}
+
+/* Responsividade Geral */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-pequeno: 1.2vw;
+        --font-size-medio: 1.8vw;
+        --font-size-grande: 3vw;
+    }
+
+    .nav-item.link {
+        font-size: 2vw;
+    }
+
+    .card {
+        height: auto;
+        padding: 15px;
+    }
+
+    .container.central {
+        width: 90%;
+    }
+
+    .preco {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-pequeno: 2.5vw;
+        --font-size-medio: 3.5vw;
+        --font-size-grande: 4.5vw;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-item {
+        font-size: var(--font-size-medio);
+        height: auto;
+        margin: 5px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container.central {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .preco {
+        font-size: 2vw;
+    }
+
+    .product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-image img {
+        max-width: 100%;
+    }
+
+    .right {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .carrinho {
+        font-size: 1rem; /* Reduzir tamanho da fonte */
+    }
+
+    .nav-item img {
+        height: 30px; /* Ajustar tamanho da logo */
+    }
+
+    .cart-itens {
+        width: 95%; /* Ajustar largura para caber melhor */
+        margin: 10px auto;
+    }
+
+    .line {
+        flex-direction: column; /* Colocar os itens em coluna */
+        text-align: center;
+        padding: 15px;
+    }
+
+    .line .nome, .line .preco {
+        font-size: 1rem; /* Ajustar tamanho da fonte */
+    }
+
+    .line .qtd {
+        justify-content: center; /* Centralizar quantidade */
+    }
+
+    .end a {
+        font-size: 1rem; /* Ajustar tamanho do botão final */
+        padding: 8px 15px;
+    }
+
+    footer {
+        font-size: 1.5vw;
+        height: auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-pequeno: 3vw;
+        --font-size-medio: 4vw;
+        --font-size-grande: 5vw;
+    }
+
+    .nav-item.link {
+        font-size: var(--font-size-medio);
+    }
+
+    .card {
+        font-size: var(--font-size-pequeno);
+        padding: 10px;
+    }
+
+    .preco {
+        font-size: 2.5vw;
+    }
+
+    .product {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .left-image img {
+        max-width: 100%;
+    }
+
+    .right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .carrinho {
+        font-size: 0.9rem;
+    }
+
+    .nav-item img {
+        height: 25px;
+    }
+
+    .line {
+        padding: 10px;
+    }
+
+    .line .nome, .line .preco {
+        font-size: 0.9rem;
+    }
+
+    .end a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    footer {
+        font-size: 3vw;
+        height: auto;
+    }
+}
+
+/* Responsividade dos containers central, left e right */
+
+@media (max-width: 1024px) {
+    .all {
+        height: auto; /* Permite ajuste dinâmico de altura */
+    }
+
+    .container.central {
+        width: 90%; /* Reduz largura para telas médias */
+    }
+
+    .container.left{
+        display: none!important;
+    }
+
+    .container.left.index{
+        display: flex!important;
+        width: 100%; /* Ocupa a largura total */
+        height: auto; /* Ajusta altura dinamicamente */
+        border-right: none; /* Remove a borda lateral */
+        border-bottom: 1px solid #066437; /* Adiciona borda inferior para separação */
+    }
+
+    .container>img{
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .container.right {
+        width: 100%; /* Ocupa a largura total */
+        height: auto; /* Ajusta altura dinamicamente */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Altera para layout vertical */
+        align-items: center;
+        text-align: center;
+    }
+
+    .card.compras{
+        width: 60%!important;
+        height: auto!important;
+        margin-top: 5px;
+        margin-bottom:55px;
+    }
+
+    .container.central {
+        width: 100%; /* Ajusta para largura completa */
+    }
+
+    .container.left,
+    .container.right {
+        width: 100%; /* Ambos ocupam toda a largura */
+        height: auto; /* Ajusta dinamicamente */
+        border: none; /* Remove todas as bordas */
+    }
+}
+
+@media (max-width: 480px) {
+    .all {
+        flex-direction: column; /* Layout totalmente vertical */
+        justify-content: flex-start;
+    }
+
+    .container.central {
+        width: 100%; /* Ocupa largura total */
+        padding: 10px; /* Adiciona espaçamento interno */
+    }
+
+    .container.left,
+    .container.right {
+        padding: 10px; /* Adiciona espaçamento interno */
+        text-align: center; /* Garante centralização do texto */
+    }
+}
+
+/* Formularios */
+
+form.login {
+    max-width: 1000px;
+    width: 90%; /* Ajusta para caber em telas menores */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px; /* Adiciona espaçamento interno */
+}
+
+.login > label {
+    color: var(--cor-primaria);
+    font-size: 1.8vw; /* Ajusta tamanho relativo à largura da tela */
+    text-align: center; /* Garante centralização */
+}
+
+.login > input {
+    width: 100%;
+    height: 5vh;
+    border: var(--cor-primaria) 1px solid;
+    border-radius: 15px;
+    padding: 8px;
+    font-size: 1rem; /* Ajusta tamanho do texto */
+}
+
+.login > input:hover {
+    border: #066437 2px solid;
+}
+
+.login > .submit {
+    text-align: center;
+    color: white;
+    background-color: var(--cor-primaria);
+    font-size: 1rem; /* Reduz tamanho em telas menores */
+    cursor: pointer;
+    padding: 0.8rem; /* Ajusta padding */
+    margin-top: 15px; /* Espaçamento superior */
+}
+
+.login > .submit:hover {
+    border: none;
+    background-color: #00bf639f;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.submit {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1rem; /* Ajusta tamanho relativo */
+    padding: 0.8rem; /* Reduz padding para telas menores */
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%; /* Garante preenchimento total em telas pequenas */
+    text-align: center;
+}
+
+.submit:hover {
+    background-color: #009e52;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    form.login {
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .login > label {
+        font-size: 1.5rem; /* Reduz tamanho da fonte */
+    }
+
+    .login > input {
+        height: auto; /* Ajusta altura dinamicamente */
+        font-size: 1rem;
+    }
+
+    .submit {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login > label {
+        font-size: 1.2rem; /* Ainda menor para dispositivos muito pequenos */
+    }
+
+    .login > input {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .submit {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Product Page */
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: flex-start;
+    }
+
+    .left-image img {
+        max-width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
+        height: auto;
+    }
+
+    .product .right {
+        max-width: 100%; /* Ajusta o tamanho do lado direito para 100% da largura */
+        padding: 15px;
+    }
+
+    .product .right h3 {
+        font-size: 20px; /* Reduz o tamanho do título */
+    }
+
+    .preco {
+        font-size: 18px; /* Reduz o tamanho do preço */
+    }
+
+    .product .button {
+        width: 100%; /* Faz o botão ocupar toda a largura disponível */
+        padding: 12px 0;
+        margin-bottom: 20px;
+    }
+
+    .product .qtd a {
+        font-size: 18px; /* Ajusta o tamanho do link */
+    }
+
+    .product .qtd {
+        font-size: 16px; /* Reduz o tamanho da quantidade */
+    }
+}
+
+/* Responsividade para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    .product {
+        gap: 20px; /* Reduz o espaçamento entre os itens */
+        margin-top: 10px;
+    }
+
+    .product .right h3 {
+        font-size: 18px; /* Ajusta o tamanho do título */
+    }
+
+    .preco {
+        font-size: 16px; /* Ajusta o tamanho do preço */
+    }
+
+    .product .button {
+        padding: 10px; /* Ajusta o tamanho do botão */
+        font-size: 16px;
+    }
+
+    .product .qtd a {
+        font-size: 16px; /* Ajusta o tamanho do link */
+    }
+
+    .product .qtd {
+        font-size: 14px; /* Ajusta o tamanho da quantidade */
+    }
+}
+
+/* Tela de Sucesso */
+
+@media (max-width: 768px) {
+    .container.sucesso h1 {
+        font-size: 5vw; /* Ajusta o tamanho do título */
+    }
+
+    .container.sucesso p {
+        font-size: 4vw; /* Ajusta o tamanho do texto */
+    }
+
+    .container.sucesso .buttons a {
+        padding: 2vw 4vw; /* Ajusta o padding do botão */
+        font-size: 4vw; /* Ajusta o tamanho da fonte */
+    }
+}
+
+/* Responsividade para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    .container.sucesso h1 {
+        font-size: 6vw; /* Tamanho ainda menor para o título */
+    }
+
+    .container.sucesso p {
+        font-size: 5vw; /* Tamanho do texto reduzido */
+    }
+
+    .container.sucesso .buttons a {
+        padding: 3vw 5vw; /* Aumenta o padding do botão */
+        font-size: 5vw; /* Aumenta o tamanho da fonte */
+    }
+}
+
+/* Pagamento */
+
+@media (max-width: 768px) {
+    .container.pagamento h1 {
+        font-size: 5vw; /* Ajusta o tamanho do título */
+    }
+
+    .container.pagamento label {
+        font-size: 4vw; /* Ajusta o tamanho da label */
+    }
+
+    .container.pagamento input[type="text"],
+    .container.pagamento input[type="month"],
+    .container.pagamento input[type="number"] {
+        font-size: 4vw; /* Ajusta o tamanho da fonte dos inputs */
+    }
+
+    .container.pagamento input[type="submit"] {
+        font-size: 4vw; /* Ajusta o tamanho da fonte do botão */
+        padding: 4vw; /* Ajusta o padding do botão */
+    }
+}
+
+/* Responsividade para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    .container.pagamento h1 {
+        font-size: 6vw; /* Tamanho ainda menor para o título */
+    }
+
+    .container.pagamento label {
+        font-size: 5vw; /* Tamanho da label reduzido */
+    }
+
+    .container.pagamento input[type="text"],
+    .container.pagamento input[type="month"],
+    .container.pagamento input[type="number"] {
+        font-size: 5vw; /* Aumenta o tamanho da fonte dos inputs */
+    }
+
+    .container.pagamento input[type="submit"] {
+        font-size: 5vw; /* Aumenta o tamanho da fonte do botão */
+        padding: 5vw; /* Aumenta o padding do botão */
+    }
 }

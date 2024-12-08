@@ -37,51 +37,26 @@ if(!$_COOKIE['email']){
 
     <section class="all">
         <section class="container lateral left">
-            <h1>Produtos para comprar</h1>
-            <article class="card planos">
-                <h3>Plano Basico</h3>
-                <p class="preco seu">R$40,00</p>
-                <?php
-                    if($seuplano == 1){
+            <?php
+                // Carrega o JSON com os planos
+                $plans = json_decode(file_get_contents('../js/plans.json'), true);
+
+                echo '<h1>Planos:</h1>';
+
+                for ($i = 0; $i < count($plans); $i++) {
+                    $plan = $plans[$i];
+                    $id = $i + 1; // ID do plano começa em 1
+                    echo "<article class=\"card planos\">";
+                    echo "<h3>{$plan['name']}</h3>";
+                    echo "<p class=\"preco\">{$plan['price']}</p>";
+                    if ($seuplano == $id) {
                         echo "<p>(O Seu)</p>";
                     } else {
-                        echo "<a href=\"upgrade.php?plano=1\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 1
+                        echo "<a href=\"upgrade.php?plano=$id\"><button>Upgrade</button></a>";
                     }
-                ?>
-            </article>
-            <article class="card planos">
-                <h3>Plano Regular</h3>
-                <p class="preco">R$60,00</p>
-                <?php
-                    if($seuplano == 2){
-                        echo "<p>(O Seu)</p>";
-                    } else {
-                        echo "<a href=\"upgrade.php?plano=2\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 2
-                    }
-                ?>
-            </article>
-            <article class="card planos">
-                <h3>Plano Premium</h3>
-                <p class="preco">R$89,99</p>
-                <?php
-                    if($seuplano == 3){
-                        echo "<p>(O Seu)</p>";
-                    } else {
-                        echo "<a href=\"upgrade.php?plano=3\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 3
-                    }
-                ?>
-            </article>
-            <article class="card planos">
-                <h3>Plano Ultra</h3>
-                <p class="preco">R$129,99</p>
-                <?php
-                    if($seuplano == 4){
-                        echo "<p>(O Seu)</p>";
-                    } else {
-                        echo "<a href=\"upgrade.php?plano=4\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 4
-                    }
-                ?>
-            </article>
+                    echo "</article>";
+                }
+            ?>
         </section>
 
         <section class="container central">
@@ -110,51 +85,26 @@ if(!$_COOKIE['email']){
         </section>
 
         <section class="container lateral right">
-            <h1>Produtos para comprar</h1>
-            <article class="card planos">
-                <h3>Plano Basico</h3>
-                <p class="preco seu">R$40,00</p>
-                <?php
-                    if($seuplano == 1){
+        <?php
+                // Carrega o JSON com os planos
+                $plans = json_decode(file_get_contents('../js/plans.json'), true);
+
+                echo '<h1>Planos:</h1>';
+
+                for ($i = 0; $i < count($plans); $i++) {
+                    $plan = $plans[$i];
+                    $id = $i + 1; // ID do plano começa em 1
+                    echo "<article class=\"card planos\">";
+                    echo "<h3>{$plan['name']}</h3>";
+                    echo "<p class=\"preco\">{$plan['price']}</p>";
+                    if ($seuplano == $id) {
                         echo "<p>(O Seu)</p>";
                     } else {
-                        echo "<a href=\"upgrade.php?plano=1\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 1
+                        echo "<a href=\"upgrade.php?plano=$id\"><button>Upgrade</button></a>";
                     }
-                ?>
-            </article>
-            <article class="card planos">
-                <h3>Plano Regular</h3>
-                <p class="preco">R$60,00</p>
-                <?php
-                    if($seuplano == 2){
-                        echo "<p>(O Seu)</p>";
-                    } else {
-                        echo "<a href=\"upgrade.php?plano=2\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 2
-                    }
-                ?>
-            </article>
-            <article class="card planos">
-                <h3>Plano Premium</h3>
-                <p class="preco">R$89,99</p>
-                <?php
-                    if($seuplano == 3){
-                        echo "<p>(O Seu)</p>";
-                    } else {
-                        echo "<a href=\"upgrade.php?plano=3\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 3
-                    }
-                ?>
-            </article>
-            <article class="card planos">
-                <h3>Plano Ultra</h3>
-                <p class="preco">R$129,99</p>
-                <?php
-                    if($seuplano == 4){
-                        echo "<p>(O Seu)</p>";
-                    } else {
-                        echo "<a href=\"upgrade.php?plano=4\"><button>Upgrade</button></a>"; // Redireciona para upgrade com plano 4
-                    }
-                ?>
-            </article>
+                    echo "</article>";
+                }
+            ?>
         </section>
     </section>
 
