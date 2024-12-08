@@ -65,7 +65,7 @@ Para rodar o código, siga os passos abaixo:
         address varchar(255) NOT NULL,                  -- Endereço do usuário
         complemento varchar(255),                       -- Complemento do endereço
         cellphone varchar(15),                          -- Número de celular (aceita DDD e número)
-        admin boolean                                   -- Verificador de admin
+        admin boolean,                                  -- Verificador de admin
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data de criação do usuário
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Data de atualização do usuário
     );
@@ -77,8 +77,8 @@ Para rodar o código, siga os passos abaixo:
     );
 
     CREATE TABLE "orders" (
-        id serial PRIMARY KEY,              -- Identificador único do pedido
-        user_id varchar(255),                -- Identificador do usuário (FK)
+        id serial PRIMARY KEY,               -- Identificador único do pedido
+        user_id int,                         -- Identificador do usuário (FK)
         total_price decimal,                 -- Preço total do pedido
         order_date timestamp default current_timestamp, -- Data do pedido
         FOREIGN KEY (user_id) REFERENCES "user"(id) -- Chave estrangeira para a tabela de usuários
