@@ -1,0 +1,6 @@
+[
+    {"name": "Plano Básico", "price": "R$40,00"},
+    {"name": "Plano Regular", "price": "R$60,00"},
+    {"name": "Plano Premium", "price": "R$89,99"},
+    {"name": "Plano Ultra", "price": "R$129,99"}
+]

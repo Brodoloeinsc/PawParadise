@@ -202,7 +202,7 @@ $plano_atual = $row[4]; // Plano atual do usuário
         <div class="plano-box">
             <h3>Plano Selecionado</h3>
             <p><strong>Valor do Novo Plano:</strong> <?php echo $planos[$plano_selecionado]['preco']; ?></p>
-            <form action="processar_upgrade.php" method="post">
+            <form action="pagamento.php" method="post">
                 <input type="hidden" name="plano_atual" value="<?php echo $plano_atual; ?>">
                 <input type="hidden" name="plano_selecionado" value="<?php echo $plano_selecionado; ?>">
                 <input type="submit" value="Alterar Plano" class="alterar-plano">

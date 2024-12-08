@@ -137,4 +137,8 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         processPayment($connection);
     }
+
+    function planUpgrade(){
+        
+    }
 ?>

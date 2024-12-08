@@ -28,7 +28,7 @@
 </head>
 <body>
     <div class="container">
-        <section class="container left">
+        <section class="container left index">
             <img src="./images/logo.jpg" alt="Logo da Paw Paradise">
             <div class="text">
                 <h1>Seja bem-vindo,</h1>
