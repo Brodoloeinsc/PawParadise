@@ -1,25 +1,33 @@
 <?php
 session_start();
-    include("../db/db.php");
+include("../db/db.php");
+include('../classes/createuser.php');
 
-    $id = uniqid();
-    $email = $_POST['email'];
-    $senha = $_POST['password'];
-    $nome = $_POST['nome'];
-    $senha = md5($senha);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Recebendo e sanitizando dados de entrada
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $senha = $_POST['password'];
+        $nome = trim($_POST['nome']);
 
-    $query = "SELECT * FROM \"user\" WHERE email = '{$email}'";
-    $result = pg_query($query);
-    if($result == true){
-        header("Location:../pages/criar.php?error=Email ja existente");
+        // Validação de entrada
+        if (empty($email) || empty($senha) || empty($nome)) {
+            header("Location: ../pages/criar.php?error=Campos obrigatórios não preenchidos");
+            exit();
+        }
+
+        try {
+            // Criando o usuário através da UserFactory
+            $user = UserFactory::createUser($email, $nome, $senha);
+
+            // Criando o cookie de sessão para o email do usuário
+            setcookie("email", $email, time() + 3600, "/"); // 1 hora
+            header("Location: ./plano.php");
+        } catch (Exception $e) {
+            // Caso ocorra algum erro, redirecionamos com a mensagem de erro
+            header("Location: ../pages/criar.php?error=" . $e->getMessage());
+        }
+    } else {
+        // Caso o formulário não tenha sido submetido via POST
+        header("Location: ../pages/criar.php?error=Método de requisição inválido");
     }
-
-    $query = "INSERT INTO \"user\" (id, name, email, password, plan) VALUES ('{$id}', '{$nome}', '{$email}', '{$senha}', '0');";
-    $result = pg_query($query);
-
-    if($result == true){
-        setcookie("email", $email, time() + 3600, "/"); // 1 hora
-        header("Location:./plano.php");
-    }
-
 ?>

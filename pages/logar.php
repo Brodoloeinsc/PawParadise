@@ -1,26 +1,30 @@
 <?php
 
-session_start();
+    session_start();
 
-    if(isset($_COOKIE['email'])){
-        header("Location:./plano.php");
+    if (isset($_COOKIE['email'])) {
+        header("Location: ./pagamento.php");
+        exit();
     }
 
     include("../db/db.php");
+    include("../classes/AuthFactory.php");  // Incluindo a fábrica de autenticação
 
     $email = $_POST['email'];
     $senha = $_POST['password'];
 
-    $senha = md5($senha);
+    // Usando a fábrica para autenticar o usuário
+    $user = AuthFactory::authenticate($email, $senha);
 
-    $query = "SELECT * FROM \"user\" WHERE email = '{$email}' AND password = '{$senha}'";
-    $result = pg_query($query);
-
-    if(pg_num_rows($result) > 0){
-        setcookie("email", $email, time() + 3600, "/"); // 1 hora
+    if ($user) {
+        // Se a autenticação for bem-sucedida, cria o cookie e redireciona para o plano
+        AuthFactory::setLoginCookie($email);
         header("Location:./pagamento.php");
-    }else{
-        header("Location:./login.php?error=1{$row}");
+        exit();
+    } else {
+        // Caso contrário, redireciona para o login com um erro
+        header("Location:./login.php?error=1");
+        exit();
     }
 
 ?>

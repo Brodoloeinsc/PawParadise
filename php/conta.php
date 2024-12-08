@@ -117,6 +117,13 @@
             <div>
                 <h1>Olá, <?php echo $row['name']; ?>!</h1>
                 <a href="./deslogar.php" class="deslogar">Desconectar</a>
+                <?php
+                
+                    if($row['admin'] == true){
+                        echo "<a href=\"../admin/index.php\" class=\"deslogar\">Admin Panel</a>";
+                    }
+
+                ?>
             </div>
             <form action="atualizar_dados.php" method="POST">
                 <label for="email">Email:</label>
@@ -134,8 +141,8 @@
                 <label for="complemento">Complemento:</label>
                 <input type="text" id="complemento" name="complemento" value="<?php echo $row['complemento']; ?>">
 
-                <label for="celphone">Celular:</label>
-                <input type="text" id="celphone" name="celphone" value="<?php echo $row['cellphone']; ?>">
+                <label for="cellphone">Celular:</label>
+                <input type="text" id="cellphone" name="cellphone" value="<?php echo $row['cellphone']; ?>">
 
                 <button type="submit" class="btn">Atualizar Dados</button>
             </form>
