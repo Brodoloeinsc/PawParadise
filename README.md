@@ -73,7 +73,8 @@ Para rodar o código, siga os passos abaixo:
     CREATE TABLE "products" (
         id SERIAL PRIMARY KEY,              -- Identificador único, auto incremento
         product_name VARCHAR(255) NOT NULL,  -- Nome do produto, não nulo
-        product_price DECIMAL(10, 2) NOT NULL -- Preço do produto, com duas casas decimais
+        product_price DECIMAL(10, 2) NOT NULL, -- Preço do produto, com duas casas decimais
+        image_url TEXT
     );
 
     CREATE TABLE "orders" (
