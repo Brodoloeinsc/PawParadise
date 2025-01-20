@@ -97,11 +97,11 @@ Para rodar o código, siga os passos abaixo:
 
     INSERT INTO "user" (name, email, password, plan, cep, address, complemento, cellphone, admin) 
     VALUES
-    ('Carlos Medina', 'carlos@exemplo.com', MD5('senha123'), 'Premium', '12345-678', 'Rua Exemplo, 123', 'Apto 101', '(11) 91234-5678', true),
-    ('Nilton Souza', 'nilton@exemplo.com', MD5('senha123'), 'Básico', '12345-678', 'Rua Principal, 456', 'Casa 2', '(35) 99876-5432', false),
-    ('Ana Costa', 'ana@exemplo.com', MD5('senha123'), 'Regular', '23456-789', 'Avenida Central, 789', 'Bloco B', '(21) 98765-4321', false),
-    ('Roberta Lima', 'roberta@exemplo.com', MD5('senha123'), 'Ultra', '34567-890', 'Rua das Flores, 101', '', '(31) 92345-6789', false),
-    ('João Silva', 'joao@exemplo.com', MD5('senha123'), 'Premium', '45678-901', 'Rua Nova, 202', 'Apto 302', '(61) 93456-7890', false);
+    ('Carlos Medina', 'carlos@exemplo.com', MD5('senha123'), '3', '12345-678', 'Rua Exemplo, 123', 'Apto 101', '(11) 91234-5678', true),
+    ('Nilton Souza', 'nilton@exemplo.com', MD5('senha123'), '1', '12345-678', 'Rua Principal, 456', 'Casa 2', '(35) 99876-5432', false),
+    ('Ana Costa', 'ana@exemplo.com', MD5('senha123'), '2', '23456-789', 'Avenida Central, 789', 'Bloco B', '(21) 98765-4321', false),
+    ('Roberta Lima', 'roberta@exemplo.com', MD5('senha123'), '4', '34567-890', 'Rua das Flores, 101', '', '(31) 92345-6789', false),
+    ('João Silva', 'joao@exemplo.com', MD5('senha123'), '3', '45678-901', 'Rua Nova, 202', 'Apto 302', '(61) 93456-7890', false);
 
 ```
 
