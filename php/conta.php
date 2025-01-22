@@ -133,20 +133,55 @@
                 <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>">
 
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep" name="cep" value="<?php echo $row['cep']; ?>">
+                <input type="text" id="cep" name="cep" value="<?php echo $row['cep']; ?>" onkeyup="viacep()">
 
-                <label for="address">Endereço:</label>
-                <input type="text" id="address" name="address" value="<?php echo $row['address']; ?>">
+                <label for="street">Rua:</label>
+                <input type="text" id="street" name="street" value="<?php echo $row['street']; ?>" readonly>
 
                 <label for="complemento">Complemento:</label>
                 <input type="text" id="complemento" name="complemento" value="<?php echo $row['complemento']; ?>">
+
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" value="<?php echo $row['city']; ?>"readonly>
+
+                <label for="state">Estado:</label>
+                <input type="text" id="state" name="state" value="<?php echo $row['state']; ?>"readonly>
 
                 <label for="cellphone">Celular:</label>
                 <input type="text" id="cellphone" name="cellphone" value="<?php echo $row['cellphone']; ?>">
 
                 <button type="submit" class="btn">Atualizar Dados</button>
+                
             </form>
         </section>
     </section>
+
+    <script>
+        function viacep() {
+            const cepInput = document.getElementById('cep');
+            if (cepInput.value.length === 8) {
+                const cep = cepInput.value;
+
+                async function fetchAddress(param) {
+                    try {
+                        const res = await fetch(`https://viacep.com.br/ws/${param}/json/`);
+                        const data = await res.json();
+                        if (data.erro) {
+                            alert("CEP não encontrado!");
+                        } else {
+                            console.log(data);
+                            document.getElementById('street').value = data.logradouro || '';
+                            document.getElementById('city').value = data.localidade || '';
+                            document.getElementById('state').value = data.uf || '';    
+                        }
+                    } catch (error) {
+                        alert("Erro ao buscar o endereço:", error);
+                    }
+                }
+                
+                fetchAddress(cep);
+            }
+        }
+    </script>
 </body>
 </html>

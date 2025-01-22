@@ -6,17 +6,21 @@
         private $email;
         private $plan;
         private $cep;
-        private $address;
+        private $street;
+        private $city;
+        private $state;
         private $complemento;
         private $cellphone;
 
-        public function __construct($connection, $name, $email, $plan, $cep, $address, $complemento = null, $cellphone = null) {
+        public function __construct($connection, $name, $email, $plan, $cep, $street, $city, $state, $complemento = null, $cellphone = null) {
             $this->connection = $connection;
             $this->name = $name;
             $this->email = $email;
             $this->plan = $plan;
             $this->cep = $cep;
-            $this->address = $address;
+            $this->street = $street;
+            $this->city = $city;
+            $this->state = $state;
             $this->complemento = $complemento;
             $this->cellphone = $cellphone;
         }
@@ -29,9 +33,11 @@
                         email = COALESCE($2, email), 
                         plan = COALESCE($3, plan),
                         cep = COALESCE($4, cep),
-                        address = COALESCE($5, address),
+                        street = COALESCE($5, street),
                         complemento = COALESCE($6, complemento),
-                        cellphone = COALESCE($7, cellphone)
+                        cellphone = COALESCE($7, cellphone),
+                        city = COALESCE($8, city),
+                        state = COALESCE($9, state)
                     WHERE email = $2";
 
             $stmt = pg_prepare($this->connection, "update_user", $query);
@@ -40,9 +46,11 @@
                 $this->email, 
                 $this->plan,
                 $this->cep,
-                $this->address,
+                $this->street,
                 $this->complemento,
-                $this->cellphone
+                $this->cellphone,
+                $this->city,
+                $this->state
             ]);
 
             // Retorna se a atualização foi bem-sucedida
@@ -86,9 +94,9 @@
     class UserFactory {
 
         // Função para criar ou atualizar o usuário
-        public static function updateUser($connection, $name, $email, $plan, $cep, $address, $complemento = null, $cellphone = null) {
+        public static function updateUser($connection, $name, $email, $plan, $cep, $street, $city, $state, $complemento = null, $cellphone = null) {
             // Cria uma instância do usuário
-            $user = new User($connection, $name, $email, $plan, $cep, $address, $complemento, $cellphone);
+            $user = new User($connection, $name, $email, $plan, $cep, $street, $city, $state, $complemento, $cellphone);
             
             // Chama a função de atualização do usuário
             return $user->updateUser();

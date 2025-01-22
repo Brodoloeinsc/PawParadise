@@ -15,12 +15,14 @@
     $email = isset($_POST['email']) ? $_POST['email'] : null;
     $plan = isset($_POST['plan']) ? $_POST['plan'] : null;
     $cep = isset($_POST['cep']) ? $_POST['cep'] : null;
-    $address = isset($_POST['address']) ? $_POST['address'] : null;
+    $street = isset($_POST['street']) ? $_POST['street'] : null;
+    $city = isset($_POST['city']) ? $_POST['city'] : null;
+    $state = isset($_POST['state']) ? $_POST['state'] : null;
     $complemento = isset($_POST['complemento']) ? $_POST['complemento'] : null;
     $cellphone = isset($_POST['cellphone']) ? $_POST['cellphone'] : null;
 
     // Atualiza os dados do usuário usando a Factory
-    if (UserFactory::updateUser($connection, $name, $email, $plan, $cep, $address, $complemento, $cellphone)) {
+    if (UserFactory::updateUser($connection, $name, $email, $plan, $cep, $street, $city, $state, $complemento, $cellphone)) {
         header("Location:./conta.php");
     } else {
         header("Location:./conta.php");
